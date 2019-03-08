@@ -36,12 +36,50 @@
         "FMTermGroupID": 1,
         "ProfileType": "Acc"
     },
+    "CondDedType6All": {
+        "ProfileElementName": "CondDedType6All",
+        "FieldName": "CondAllDeductible",
+        "DeductibleType": "B",
+        "FMLevelName": "CondAll",
+        "FMLevel": 6,
+        "FMTermType": "DeductibleType",
+        "FMTermGroupID": 1,
+        "ProfileType": "Acc"
+    },
+    "CondDedCode6All": {
+        "ProfileElementName": "CondDedCode6All",
+        "FieldName": "CondAllDeductible",
+        "DeductibleType": "B",
+        "FMLevelName": "CondAll",
+        "FMLevel": 6,
+        "FMTermType": "DeductibleCode",
+        "FMTermGroupID": 1,
+        "ProfileType": "Acc"
+    },
     "CondLimit6All": {
         "ProfileElementName": "CondLimit6All",
         "FieldName": "CondAllLimit",
         "FMLevelName": "CondAll",
         "FMLevel": 6,
         "FMTermType": "Limit",
+        "FMTermGroupID": 1,
+        "ProfileType": "Acc"
+    },
+    "CondLimitType6All": {
+        "ProfileElementName": "CondLimitType6All",
+        "FieldName": "CondAllLimit",
+        "FMLevelName": "CondAll",
+        "FMLevel": 6,
+        "FMTermType": "LimitType",
+        "FMTermGroupID": 1,
+        "ProfileType": "Acc"
+    },
+    "CondLimitCode6All": {
+        "ProfileElementName": "CondLimitCode6All",
+        "FieldName": "CondAllLimit",
+        "FMLevelName": "CondAll",
+        "FMLevel": 6,
+        "FMTermType": "LimitCode",
         "FMTermGroupID": 1,
         "ProfileType": "Acc"
     },
@@ -52,6 +90,26 @@
         "FMLevelName": "PolAll",
         "FMLevel": 9,
         "FMTermType": "Deductible",
+        "FMTermGroupID": 1,
+        "ProfileType": "Acc"
+    },
+    "PolDedType6All": {
+        "ProfileElementName": "PolDedType6All",
+        "DeductibleType": "B",
+        "FieldName": "BlanketDeductible",
+        "FMLevelName": "PolAll",
+        "FMLevel": 9,
+        "FMTermType": "DeductibleType",
+        "FMTermGroupID": 1,
+        "ProfileType": "Acc"
+    },
+    "PolDedCode6All": {
+        "ProfileElementName": "PolDedCode6All",
+        "DeductibleType": "B",
+        "FieldName": "BlanketDeductible",
+        "FMLevelName": "PolAll",
+        "FMLevel": 9,
+        "FMTermType": "DeductibleCode",
         "FMTermGroupID": 1,
         "ProfileType": "Acc"
     },

@@ -166,7 +166,7 @@ def unified_fm_profile_by_level_and_term_group(profiles=[], profile_paths=[], un
     })
 
 
-def unified_fm_terms_by_level_and_term_group(profiles=[], profile_paths=[], unified_profile_by_level=None, unified_profile_by_level_and_term_group=None):
+def unified_fm_terms_by_level_and_term_group(profiles=[], profile_paths=[], unified_profile_by_level=None, unified_profile_by_level_and_term_group=None, include_ded_and_lim_types_and_codes=False):
 
     ufpl = copy.deepcopy(unified_profile_by_level or {})
     ufp = copy.deepcopy(unified_profile_by_level_and_term_group or {})
@@ -181,12 +181,17 @@ def unified_fm_terms_by_level_and_term_group(profiles=[], profile_paths=[], unif
     ufpl = ufpl or (unified_fm_profile_by_level(profiles=profiles, profile_paths=profile_paths) if profiles or profile_paths else {})
     ufp = ufp or unified_fm_profile_by_level_and_term_group(unified_profile_by_level=ufpl)
 
+    term_types = (
+        ('deductible', 'deductiblemin', 'deductiblemax', 'limit', 'share',) if not include_ded_and_lim_types_and_codes
+        else ('deductible', 'deductibletype', 'deductiblecode', 'deductiblemin', 'deductiblemax', 'limit', 'limittype', 'limitcode', 'share',)
+    )
+
     return OrderedDict({
         level: {
             tiv_tgid: {
-                term_type: (
-                    ufp[level][tiv_tgid][term_type]['ProfileElementName'].lower() if ufp[level][tiv_tgid].get(term_type) else None
-                ) for term_type in ('deductible', 'deductiblemin', 'deductiblemax', 'limit', 'share',)
+                tt: (
+                    ufp[level][tiv_tgid][tt]['ProfileElementName'].lower() if ufp[level][tiv_tgid].get(tt) else None
+                ) for tt in term_types
             } for tiv_tgid in ufp[level]
         } for level in sorted(ufp)[1:]
     })
